@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #ff9faf;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.grid {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (max-width: 740px) {
+    .grid {
+        width: 100%;
+    }
+}

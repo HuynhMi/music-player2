@@ -1,0 +1,80 @@
+.player {
+    background-color: var(--white-color);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    padding: 20px 0px;
+}
+
+.player__dashboard {
+}
+
+.player__text {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.player__cd-thumb-wrap {
+    height: 200px;
+}
+
+.player__cd-thumb {
+    background-image: url('../img/betterTogether.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    padding-top: 50%;
+    border-radius: 100%;
+}
+
+.player__name {
+
+}
+
+.player__author {
+
+}
+
+.player__proccess {
+
+}
+
+.player__control {
+
+}
+
+.player__btn {
+
+}
+
+.player__playlist {
+
+}
+
+.song {
+
+}
+
+.song__cd-thumb {
+
+}
+
+.song__info {
+
+}
+
+.song__name {
+
+}
+
+.song__author {
+
+}
+
+.song__time {
+
+}
+
+.song__ellipsis {
+
+}

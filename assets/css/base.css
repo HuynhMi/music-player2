@@ -1,5 +1,6 @@
 :root {
     --primary-color: #ff9faf;
+    --white-color: #fff;
 }
 
 * {
@@ -14,12 +15,13 @@ html {
 }
 
 .grid {
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
+
 @media (max-width: 740px) {
     .grid {
-        width: 100%;
+        max-width: 100%;
     }
 }

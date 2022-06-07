@@ -1,20 +1,26 @@
 .player {
-    background-color: var(--white-color);
+    background-color: #f9f9ff;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
     height: 100vh;
     padding: 20px 0px;
 }
 
+
 .player__dashboard {
+    text-align: center;
 }
 
 .player__text {
-    text-align: center;
     font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
 }
 
 .player__cd-thumb-wrap {
-    height: 200px;
+    --height: 250px;
+    width: var(--height);
+    height: var(--height);
+    margin: 0 auto;
 }
 
 .player__cd-thumb {
@@ -22,33 +28,97 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50%;
-    padding-top: 50%;
+    width: 100%;
+    padding-top: 100%;
     border-radius: 100%;
+    position: relative;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.player__cd-thumb::before {
+    --size: 40px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: var(--size);
+    width: var(--size);
+    background-color: var(--white-color);
+    border-radius: var(--size);
+    transform: translate(-50%,-50%);
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .player__name {
-
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 5px;
 }
 
 .player__author {
-
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 300;
 }
 
 .player__proccess {
-
+    --height: 15px;
+    appearance: none;
+    height: var(--height);
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--height);
+    margin-top: 20px;
 }
-
+.player__proccess::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: var(--primary-color);
+    height: var(--height);
+    width: 40px;
+    border-radius: var(--height);
+    cursor: pointer;
+}
 .player__control {
-
+    margin-top: 20px;
 }
 
 .player__btn {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+}
 
+.player__btn + .player__btn {
+    margin-left: 40px;
+}
+
+.player__btn--play {
+    --height: 55px;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    height: var(--height);
+    width: var(--height);
+    font-size: 3rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.player__btn--play .play {
+    display: none;
+}
+
+.player.playing .player__btn--play .play{
+    display: block;
+}
+
+.player.playing .player__btn--play .pause{
+    display: none;
 }
 
 .player__playlist {
-
+    
 }
 
 .song {

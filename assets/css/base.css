@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #ff9faf;
+    --primary-color: #ffb9b9;
     --white-color: #fff;
 }
 
@@ -11,7 +11,7 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .grid {

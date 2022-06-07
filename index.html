@@ -11,6 +11,9 @@
     <script src="./assets/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="grid player">
@@ -19,15 +22,15 @@
             <div class="player__cd-thumb-wrap">
                 <div class="player__cd-thumb"></div>
             </div>
-            <h5 class="player__name">Warm Fuzzy Feeling</h5>
+            <h1 class="player__name">Warm Fuzzy Feeling</h1>
             <span class="player__author">By Kathryn santiago</span>
             <input type="range" class="player__proccess" min="0" max="100" value="5" step="1">
             <div class="player__control">
                 <button class="player__btn"><i class="fa-solid fa-repeat"></i></button>
                 <button class="player__btn"><i class="fa-solid fa-forward-step"></i></button>
-                <button class="player__btn">
-                    <i class="fa-solid fa-play"></i>
-                    <i class="fa-solid fa-pause"></i>
+                <button class="player__btn player__btn--size-m player__btn--play">
+                    <span class="pause"><i class="fa-solid fa-play"></i></span>
+                    <span class="play"><i class="fa-solid fa-pause"></i></span>
                 </button>
                 <button class="player__btn"><i class="fa-solid fa-backward-step"></i></button>
                 <button class="player__btn"><i class="fa-solid fa-shuffle"></i></button>

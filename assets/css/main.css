@@ -1,8 +1,5 @@
 .player {
-    background-color: #f9f9ff;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
     /* height: 100vh; */
-    padding: 20px 0px;
 }
 
 
@@ -10,11 +7,15 @@
     text-align: center;
     position: fixed;
     width: var(--player-width);
+    background-color: #f9f9ff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    top: 0;
+    padding: 20px 0px;
+    height: 100vh;
 }
 
 .player__text {
     font-size: 2.2rem;
-    margin-bottom: 20px;
     font-weight: 400;
 }
 
@@ -22,7 +23,8 @@
     --height: 250px;
     width: var(--height);
     height: var(--height);
-    margin: 0 auto;
+    margin: 15px auto;
+    transition: all linear 200ms;
 }
 
 .player__cd-thumb {
@@ -54,7 +56,6 @@
 .player__name {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-top: 25px;
     margin-bottom: 5px;
 }
 
@@ -123,6 +124,7 @@
     list-style: none;
     padding: 20px 20px;
     margin-top: 100vh;
+    background-color: var(--white-color);
 }
 
 .song {

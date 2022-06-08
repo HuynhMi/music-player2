@@ -24,7 +24,11 @@
             </div>
             <h1 class="player__name">Warm Fuzzy Feeling</h1>
             <span class="player__singer">By Kathryn santiago</span>
-            <input type="range" class="player__process" id="process" min="0" max="100" value="0" step="1">
+            <div class="player__process-wrap">
+                <span class="player__process-time" id="currentTime" >0:00</span>
+                <input type="range" class="player__process" id="process" min="0" max="100" value="0" step="1">
+                <span class="player__process-time" id="durationSong">0:00</span>
+            </div>
             <div class="player__control">
                 <button class="player__btn" id="repeatBtn"><i class="fa-solid fa-repeat"></i></button>
                 <button class="player__btn" id="previousBtn" ><i class="fa-solid fa-forward-step"></i></button>

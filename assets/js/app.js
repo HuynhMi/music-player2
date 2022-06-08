@@ -4,6 +4,7 @@
 3.play, pause, seek
 4.next, previous
 5.repeat, random
+6. active song
 6. play song
 7. scrollIntoView
 **/
@@ -22,6 +23,8 @@ const singerSong = $('.player__singer');
 const audio = $('#audio');
 const previousBtn = $('#previousBtn');
 const nextBtn = $('#nextBtn');
+const duration = $('#durationSong');
+const currentTimeElement = $('#currentTime');
 
 const app = {
     indexCurrent: 0,
@@ -79,15 +82,15 @@ const app = {
         },
     ],
     render: function() {
-        const htmls = this.songs.map(function(song) {
+        const indexCurrent = this.indexCurrent;
+        const htmls = this.songs.map(function(song, index) {
             return `
-                    <li class="song">
+                    <li class="song ${index == indexCurrent ? 'active' : ''}">
                         <div class="song__cd-thumb" style="background-image: url('${song.cd}');"></div>
                         <div class="song__info">
                             <h5 class="song__name">${song.name}</h5>
                             <span class="song__singer">${song.singer}</span>
                         </div>
-                        <span class="song__time">5:00</span>
                         <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
                     </li>
                 `
@@ -168,6 +171,10 @@ const app = {
         audio.onplay = function() {
             player.classList.add('playing');
             animate.play();
+            // load duration of audio
+            let durationStr = (audio.duration / 60).toFixed(2);
+            durationStr = durationStr.replace('.',':');
+            duration.textContent = durationStr;
         }
 
         audio.onpause = function() {
@@ -181,6 +188,9 @@ const app = {
             const duration = audio.duration;
             if (isNaN(duration)) return;
             process.value = Math.ceil(currentTime*100 / duration);
+
+            // load currentTime
+            
         }
 
         //seek
@@ -211,15 +221,20 @@ const app = {
 
         audio.onended = function() {
             if (_this.isRandom) {
-
+                const numberRandom = Math.floor(Math.random() * _this.songs.length);
+                _this.indexCurrent = numberRandom;
+                _this.loadCurrentSong();
+                audio.play();
             } else if (_this.isRepeat) {
-
+                _this.loadCurrentSong();
+                audio.play();
             } else {
                 animate.cancel();
                 _this.isPlay = !_this.isPlay;
-                process.value = 0;
+                _this.loadCurrentSong();
             }
         }
+
     },
     start: function() {
         this.defineproperties();

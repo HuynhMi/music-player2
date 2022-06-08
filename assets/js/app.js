@@ -85,7 +85,7 @@ const app = {
         const indexCurrent = this.indexCurrent;
         const htmls = this.songs.map(function(song, index) {
             return `
-                    <li class="song ${index == indexCurrent ? 'active' : ''}">
+                    <li class="song ${index == indexCurrent ? 'active' : ''}" data-index=${index}>
                         <div class="song__cd-thumb" style="background-image: url('${song.cd}');"></div>
                         <div class="song__info">
                             <h5 class="song__name">${song.name}</h5>
@@ -171,10 +171,6 @@ const app = {
         audio.onplay = function() {
             player.classList.add('playing');
             animate.play();
-            // load duration of audio
-            let durationStr = (audio.duration / 60).toFixed(2);
-            durationStr = durationStr.replace('.',':');
-            duration.textContent = durationStr;
         }
 
         audio.onpause = function() {
@@ -188,7 +184,6 @@ const app = {
             const duration = audio.duration;
             if (isNaN(duration)) return;
             process.value = Math.ceil(currentTime*100 / duration);
-
             // load currentTime
             
         }
@@ -232,6 +227,18 @@ const app = {
                 animate.cancel();
                 _this.isPlay = !_this.isPlay;
                 _this.loadCurrentSong();
+            }
+        }
+
+        // play song
+        playlist.onclick = function(e) {
+            const nodeSong = e.target.closest('.song:not(.active)');
+            if (!e.target.closest('.song__ellipsis') && nodeSong ) {
+                const newIndex = nodeSong.dataset.index;
+                _this.indexCurrent = newIndex;
+                _this.loadCurrentSong();
+                audio.play();
+                _this.render();
             }
         }
 

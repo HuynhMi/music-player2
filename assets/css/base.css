@@ -22,7 +22,19 @@ html {
 
 
 @media (max-width: 740px) {
+    :root {
+        --player-width: 100%;
+    }
+
     .grid {
         max-width: 100%;
+    }
+
+    html {
+        font-size: 55%;
+    }
+
+    .player__btn {
+        margin: 0 15px!important;
     }
 }

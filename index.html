@@ -23,103 +23,22 @@
                 <div class="player__cd-thumb"></div>
             </div>
             <h1 class="player__name">Warm Fuzzy Feeling</h1>
-            <span class="player__author">By Kathryn santiago</span>
-            <input type="range" class="player__proccess" min="0" max="100" value="5" step="1">
+            <span class="player__singer">By Kathryn santiago</span>
+            <input type="range" class="player__process" id="process" min="0" max="100" value="0" step="1">
             <div class="player__control">
-                <button class="player__btn"><i class="fa-solid fa-repeat"></i></button>
+                <button class="player__btn" id="repeatBtn"><i class="fa-solid fa-repeat"></i></button>
                 <button class="player__btn"><i class="fa-solid fa-forward-step"></i></button>
-                <button class="player__btn player__btn--size-m player__btn--play">
+                <button class="player__btn player__btn--size-m player__btn--play" id="playBtn">
                     <span class="pause"><i class="fa-solid fa-play"></i></span>
                     <span class="play"><i class="fa-solid fa-pause"></i></span>
                 </button>
                 <button class="player__btn"><i class="fa-solid fa-backward-step"></i></button>
-                <button class="player__btn"><i class="fa-solid fa-shuffle"></i></button>
+                <button class="player__btn" id="randomBtn"><i class="fa-solid fa-shuffle"></i></button>
             </div>
+            <audio src="" id="audio"></audio>
         </div>
         <div class="player__playlist">
-            <ul>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-                <li class="song">
-                    <div class="song__cd-thumb"></div>
-                    <div class="song__info">
-                        <h5 class="song__name">Warm Fuzzy Feeling</h5>
-                        <span class="song__author">By Kathryn santiago</span>
-                    </div>
-                    <span class="song__time">5:00</span>
-                    <span class="song__ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
-                </li>
-            </ul>
+            <ul id="playlist"></ul>
         </div>
     </div>
     <script src="./assets/js/app.js"></script>

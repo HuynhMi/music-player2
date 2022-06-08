@@ -208,6 +208,18 @@ const app = {
             _this.loadCurrentSong();
             audio.play();
         }
+
+        audio.onended = function() {
+            if (_this.isRandom) {
+
+            } else if (_this.isRepeat) {
+
+            } else {
+                animate.cancel();
+                _this.isPlay = !_this.isPlay;
+                process.value = 0;
+            }
+        }
     },
     start: function() {
         this.defineproperties();

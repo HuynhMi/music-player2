@@ -1,13 +1,16 @@
 .player {
     background-color: #f9f9ff;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-    height: 100vh;
+    /* height: 100vh; */
     padding: 20px 0px;
 }
 
 
 .player__dashboard {
     text-align: center;
+    position: fixed;
+    width: var(--player-width);
+
 }
 
 .player__text {
@@ -46,7 +49,7 @@
     background-color: var(--white-color);
     border-radius: var(--size);
     transform: translate(-50%,-50%);
-    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
 .player__name {
@@ -118,33 +121,55 @@
 }
 
 .player__playlist {
-    
+    list-style: none;
+    padding: 20px 20px;
+    margin-top: 510px;
 }
 
 .song {
-
+    display: flex;
+    align-items: center;
+    padding: 15px 15px;
+    border-top: 1px solid #e6e6e6;
 }
 
-.song__cd-thumb {
 
+.song__cd-thumb {
+    --size: 50px;
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--size);
+    background-image: url('/assets/img/betterTogether.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .song__info {
-
+    flex: 1;
+    margin: 0 15px;
 }
 
 .song__name {
-
+    font-size: 1.7rem;
+    font-weight: 600;
 }
 
 .song__author {
-
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 5px;
+    display: block;
 }
 
 .song__time {
-
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: 10px;
 }
 
 .song__ellipsis {
-
+    font-size: 2rem;
+    color: #414141;
+    cursor: pointer;
 }

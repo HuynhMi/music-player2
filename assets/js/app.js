@@ -96,6 +96,7 @@ const app = {
                 `
         });
         playlist.innerHTML = htmls.join('\n');
+        this.scrollIntoView();
     },
     defineproperties: function() {
         //definition a new property to app
@@ -184,8 +185,6 @@ const app = {
             const duration = audio.duration;
             if (isNaN(duration)) return;
             process.value = Math.ceil(currentTime*100 / duration);
-            // load currentTime
-            
         }
 
         //seek
@@ -197,35 +196,52 @@ const app = {
 
         // previous button and next button
         previousBtn.onclick = function() {
-            _this.indexCurrent --;
-            if (_this.indexCurrent < 0) {
-                _this.indexCurrent = _this.songs.length - 1;
+            if (_this.isRandom) {
+                let numberRandom;
+                do {
+                    numberRandom = Math.floor(Math.random() * _this.songs.length);
+                } while (numberRandom == _this.indexCurrent)
+                _this.indexCurrent = numberRandom;
+            } else {
+                _this.indexCurrent --;
+                if (_this.indexCurrent < 0) {
+                    _this.indexCurrent = _this.songs.length - 1;
+                }
             }
             _this.loadCurrentSong();
+            _this.isPlay = true;
             audio.play();
+            _this.render();
         }
 
         nextBtn.onclick = function() {
-            _this.indexCurrent ++;
-            if (_this.indexCurrent >= _this.songs.length) {
-                _this.indexCurrent = 0;
+            if (_this.isRandom) {
+                let numberRandom;
+                do {
+                    numberRandom = Math.floor(Math.random() * _this.songs.length);
+                } while ( numberRandom == _this.indexCurrent)
+                _this.indexCurrent = numberRandom;
+            } else {
+                _this.indexCurrent ++;
+                if (_this.indexCurrent >= _this.songs.length) {
+                    _this.indexCurrent = 0;
+                }
             }
+
             _this.loadCurrentSong();
+            _this.isPlay = true;
             audio.play();
+            _this.render();
         }
 
         audio.onended = function() {
             if (_this.isRandom) {
-                const numberRandom = Math.floor(Math.random() * _this.songs.length);
-                _this.indexCurrent = numberRandom;
-                _this.loadCurrentSong();
-                audio.play();
+                nextBtn.click();
             } else if (_this.isRepeat) {
-                _this.loadCurrentSong();
+                _this.isPlay = _this.isRepeat;
                 audio.play();
             } else {
-                animate.cancel();
-                _this.isPlay = !_this.isPlay;
+                _this.isPlay = false;
                 _this.loadCurrentSong();
             }
         }
@@ -238,10 +254,19 @@ const app = {
                 _this.indexCurrent = newIndex;
                 _this.loadCurrentSong();
                 audio.play();
+                _this.isPlay = true;
                 _this.render();
             }
         }
 
+    },
+    scrollIntoView: function() {
+        const songNode = $('.song.active');
+        console.log(songNode);
+        songNode.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        })
     },
     start: function() {
         this.defineproperties();

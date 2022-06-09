@@ -35,49 +35,49 @@ const app = {
         {
             name: 'Take me to your heart',
             singer: 'Jin Chi',
-            cd: '/assets/img/song1.jpg',
+            cd: './assets/img/song1.jpg',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX19m%2f0b%2bXuMH4a5looZdu%2bbxN1TVCS9OIBChVKJchDmZzJB6pzsUj0LNiU1dlaIa5BAU9uzRi%2fuZapfreaqrtSierYmk19RtJPDCO7h2QMigy9j7tw99Gkq0JzefBS06OBCi9of0WKxThP1bcfH6o%2bf2mmDGrwlX%2b%2bWRtNr0%2buOKTrWBLN2UzaUzgjpEFmLimbtv2wI%2b1Yo13cvzFLJ9k9gBH2ux%2f4BnDZU%3d&s=youtube&id=&h=1789660602593884464'
         },
         {
             name: 'Only love',
             singer: 'Jin Chi',
-            cd: '/assets/img/song2.jpg',
+            cd: './assets/img/song2.jpg',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX1%2bF1FtyCSYP5qfVboRewmgFvBiMLarOjhAj243IEzjC%2bZZyN3c8ODZIAv6t%2ftljqUEacjPYLyRa7Bht%2ffELAkwwI14h1SU5EcC57FkQHssQe%2f%2faILxDZb1gFneH%2bNyQnulst2HPix3sDYKyH7RgZZdHLMvmUhY9Knw%3d&s=youtube&id=&h=1789660602593884487'
         },
         {
             name: 'Beautiful in white',
             singer: 'Hero Band',
-            cd: '/assets/img/song3.jpg',
+            cd: './assets/img/song3.jpg',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX1%2bZokJt21DjZzRsqnmWQV0z4CS16s9n3WAFbMgEpq3U77FEex8j8pFYAlnbHd8GwNyJArKJqd2f59Hvga7XmMc7ZswK1fa%2f5Ahz0tao59RH124n8ypfZaSXmR1KCsBDxfUOAtHFk2exnhhYGORMN%2fnu0%2bS0DRzlXOU%3d&s=youtube&id=&h=1789660602593884487'
         },
         {
             name: 'Until you',
             singer: 'Shayne Ward',
-            cd: '/assets/img/song4.jpg',
+            cd: './assets/img/song4.jpg',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX1%2bHxYQg%2bZvazqsqbCTS6hNkc2Q4AzRwEO4vucF8WFXWIoW3vz%2f7umibTBHrliiRVy2xRoXIHNMCDhhJYnBzhs1SYYbK9ADghkT8K7%2blYErf1Hc%2fUJ1x7jSz1SpS3mOnuJa8MABArPjARQ%3d%3d&s=youtube&id=&h=1789660602593884487'
         },
         {
             name: 'Pround of you',
             singer: 'fiona fung',
-            cd: '/assets/img/song5.jpg',
+            cd: './assets/img/song5.jpg',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX18wVtSrGkfIoAFof3J5lfZxek1mlxqKSVQ9oFtz%2f0raVuAiKtKz7qa5VEe7RAtWGQSmFFEhOxx2yYaQDm9FjkZzVJmmRKNQNf8MCvhcDZVwwPeVkfQ4Pry%2bfdblJ8SPTAdwNrSMXZhpceUqchTO0DJq2CP%2fRxHWAsk%3d&s=youtube&id=&h=1789660602593884487'
         },
         {
             name: 'Butterfly',
             singer: 'Marnik, Hard Lights',
-            cd: '/assets/img/song6.jpg',
+            cd: './assets/img/song6.jpg',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX19FP3Hl5x42QaKHulcJwWkQnuA6gtACq1i8HEv2gH1iYUdPuKZG8hNsYqrThGN%2fpfsn%2bBcBLq2%2bNWQr3iUImLyW%2bnN5XhWF3CWfacv7H9AzbtchzX%2bVUliGERdnKnGlacYtntudJvnk23YIFbq%2bEmO%2fN0%2bhrf77mxQ%3d&s=youtube&id=&h=1789660602593884487'
         },
         {
             name: 'Umbrella',
             singer: 'Ember Island, The white panda',
-            cd: '/assets/img/song7.jpg',
+            cd: './assets/img/song7.jpg',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX19EqEkkjjwX1%2byoYvLnfth%2fdfKM0vV%2fnhyzSFJ2%2fAZxUuE9qN02ZQcZFSAW%2fSIt%2fUzcYas9PlqQrOCKxyv5NfIAAf9teXh%2bY0yaHw01asGchXA8X%2b%2byc7LVJiV6tHV5TwXug17AKG5M2I32wDNEzCuMSHmxVP0KVWfoz%2fGj3G44H0G4qVzdRDJn&s=youtube&id=&h=1789660602593884487'
         },
         {
             name: 'Don\'t watch me cry',
             singer: 'Jorja Smith',
-            cd: '/assets/img/song8.png',
+            cd: './assets/img/song8.png',
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX18jXomfD7kqXOQNxpp5M2pbqDG475adwpz0c6%2fDuwXohhzFIB8h6ipiRn09jBp8thrvAKA9jpAdEE34%2bc%2bbUc4f6HcXkd6Uuvk%2bJT2Zf%2f5VCePvZfosROQFWSozhsjdw%2blGr8CD0kFaCfQ%2bYo6VQKSL4d6p9nVZO9g%3d&s=youtube&id=&h=1789660602593884488'
         },
     ],

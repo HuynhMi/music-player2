@@ -25,6 +25,7 @@ const previousBtn = $('#previousBtn');
 const nextBtn = $('#nextBtn');
 const duration = $('#durationSong');
 const currentTimeElement = $('#currentTime');
+const PLAYER_STORAGE_KEY = 'MY_PLAYER';
 
 const app = {
     indexCurrent: 0,
@@ -81,6 +82,7 @@ const app = {
             url: 'https://ytop1.com/vi/Thankyou?token=U2FsdGVkX18jXomfD7kqXOQNxpp5M2pbqDG475adwpz0c6%2fDuwXohhzFIB8h6ipiRn09jBp8thrvAKA9jpAdEE34%2bc%2bbUc4f6HcXkd6Uuvk%2bJT2Zf%2f5VCePvZfosROQFWSozhsjdw%2blGr8CD0kFaCfQ%2bYo6VQKSL4d6p9nVZO9g%3d&s=youtube&id=&h=1789660602593884488'
         },
     ],
+    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
     render: function() {
         const indexCurrent = this.indexCurrent;
         const htmls = this.songs.map(function(song, index) {
@@ -140,19 +142,24 @@ const app = {
             // check the random button
             _this.isRepeat = !_this.isRepeat;
             this.classList.toggle('active', _this.isRepeat);
+            _this.setConfig('isRepeat', _this.isRepeat);
             if (_this.isRandom) {
                 _this.isRandom = !_this.isRandom;
                 randomBtn.classList.toggle('active', _this.isRandom);
+                _this.setConfig('isRandom', _this.isRandom);
             }
+            
         }
 
 
         randomBtn.onclick = function() {
             _this.isRandom = !_this.isRandom;
             this.classList.toggle('active', _this.isRandom);
+            _this.setConfig('isRandom', _this.isRandom);
             if (_this.isRepeat) {
                 _this.isRepeat = !_this.isRepeat;
                 repeatBtn.classList.toggle('active', _this.isRepeat);
+                _this.setConfig('isRepeat', _this.isRepeat);
             }
         }
 
@@ -268,11 +275,34 @@ const app = {
             block: 'center'
         })
     },
+    setConfig: function(key, value) {
+        this.config[key] = value;
+        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
+    },
+    loadConfig: function() {
+        // if (Object.keys(this.config).length >= 2) {
+        //     this.isRandom = this.config['isRandom'];
+        //     this.isRepeat = this.config['isRepeat'];
+        // }
+        if (this.config['isRandom']) {
+            this.isRandom = this.config['isRandom'];
+        }
+        if (this.config['isRepeat']) {
+            this.isRepeat = this.config['isRepeat'];
+        }
+        
+    }
+    ,
     start: function() {
         this.defineproperties();
         this.loadCurrentSong();
         this.handleEvent();
         this.render();
+        this.loadConfig();
+        console.log(this.isRepeat);
+        console.log(this.isRandom);
+        repeatBtn.classList.toggle('active', this.isRepeat);
+        randomBtn.classList.toggle('active', this.isRandom);
     }
 }
 
